@@ -5,9 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ProjectController {
-
-	
-
 		@RequestMapping("login")
 		public String login()
 		{
@@ -25,6 +22,7 @@ public class ProjectController {
 		{
 			return "home.html";
 		}
+
 }
 
 
