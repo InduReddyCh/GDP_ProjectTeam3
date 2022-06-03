@@ -361,7 +361,7 @@ Core theme CSS (includes Bootstrap)
 				</div>
 			</div>
 		</div>
-	</section>
+ </section>
 	Footer
 	<footer class="footer text-center">
 		<div class="container">
