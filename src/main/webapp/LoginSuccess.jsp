@@ -38,8 +38,6 @@ width : 130px;
 <img src= "images/farmer.jpg">
 
 
-
-
 </div>
 </body>
 </html>
