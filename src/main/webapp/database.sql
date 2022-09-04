@@ -11,7 +11,9 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 				
 				int rowcount = stmt.executeUpdate();
 
+
 --Login Servlet
+
 Class.forName("com.mysql.cj.jdbc.Driver");  
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project?useSSL=false","root","");    
 			PreparedStatement stmt=con.prepareStatement("select * from users where userId = ? and upwd = ?;");  
@@ -25,3 +27,5 @@ use project;
 create table users(id int primary key auto_increment, userId varchar(50), uname varchar(50),upwd varchar(50), mobileNo varchar(50), address varchar(50), userType varchar(50) );
 desc users;
 select * from users;
+
+
