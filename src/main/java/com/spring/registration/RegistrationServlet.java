@@ -58,7 +58,7 @@ public class RegistrationServlet extends HttpServlet {
 					request.setAttribute("status", "success");
 				}
 				else {
-					request.setAttribute("status", "failed");
+					request.setAttribute("status", "fails");
 				}
 				dispatcher.forward(request, response);
 			}
