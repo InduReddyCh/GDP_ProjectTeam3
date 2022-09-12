@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>FARMatrix - Farmer Page</title>
 <style>
 button {
 background-color: #90ee90;
@@ -18,11 +18,18 @@ width : 130px;
 <h1 style = "text-align:center">FARMatrix - Farmer Page</h1>
 <div>
 
+
+ <form id="form"> 
+    <input type="search" id="query" name="q" placeholder="Search...">
+    <button>Search</button>
+  </form> <br>
 <button id="myButton8">Home</button>&nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
 <script type="text/javascript">document.getElementById("myButton8").onclick = function () {
         location.href = "index.jsp";
     };
+    
+   
 </script>
 <button id="myButton5" class="float-left submit-button" >Add Product</button>
 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
@@ -36,6 +43,8 @@ width : 130px;
 <br>
 <br>
 <img src= "images/farmer.jpg">
+
+
 
 
 </div>
