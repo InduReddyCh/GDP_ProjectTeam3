@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu2"></th:block>
+	<div class="container">
+		<div class="pages">
+			<div class="comments-area">
+				<h3>Search Products</h3>
+				<form th:action="@{/searchmyproduct}">
+					<p>
+						<label>Product Name</label> <span>*</span> <input type="text"
+							name="productname" required="required">
+					</p>
+					<p>
+						<input type="submit" value="Search My Product">
+					</p>
+				</form>
+			</div>
+		</div>
+		<div class="women_main">
+			<div class="col-md-9 w_content">
+				<!-- --------------------------------------product start-------------------------------------- -->
+				<div class="grids_of_4" th:each="product : ${products}">
+					<form action="@{/editproduct(id=${product.id})}">
+						<div class="grid1_of_4 simpleCart_shelfItem">
+							<div class="content_box">
+								<a th:href="@{/editproduct(id=${product.id})}">
+									<div class="view view-fifth">
+										<img th:src="@{'productimages/'+${product.imageName}}"
+											class="img-responsive" alt="" />
+										<div class="mask1">
+											<div class="info"></div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<h5>
+								<a href="#" th:text="${product.name}"></a>
+							</h5>
+							<div class="size_1">
+								₹<span class="item_price" th:text="${product.price}"></span> <a
+									th:href="@{/deleteproduct(id=${product.id})}">Delete</a>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- --------------------------------------product end-------------------------------------- -->
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>

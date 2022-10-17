@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu1"></th:block>
+	<div class="single_top">
+		<div class="container">
+			<div class="register">
+				<form th:action="@{/regaction}" th:object="${user}" method="post">
+					<div class="register-top-grid">
+						<h3>PERSONAL INFORMATION</h3>
+						<div>
+							<span>Name<label>*</label></span> <input type="text"
+								th:field="*{name}" required="required">
+						</div>
+						<div>
+							<span>Mobile<label>*</label></span> <input type="text"
+								th:field="*{mobile}" required="required" pattern="[6789][0-9]{9}">
+						</div>
+						<div>
+							<span>Address<label>*</label></span>
+							<textarea th:field="*{address}" rows="5" cols="63" required="required"></textarea>
+						</div>
+						<div>
+							<span>Select User Type<label>*</label></span>
+							<select th:field="*{role}" required="required">
+								<option value="">--select user type</option>
+								<option value="farmer">Farmer</option>
+								<option value="dealer">Dealer</option>
+								<option value="customer">customer</option>
+							</select>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="register-bottom-grid">
+						<h3>LOGIN INFORMATION</h3>
+						<div>
+							<span>Email<label>*</label></span> <input type="text"
+								th:field="*{username}" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+						</div>
+						<div>
+							<span>Password<label>*</label></span> <input type="password"
+								th:field="*{password}" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="register-but">
+						<input type="submit" value="submit">
+						<div class="clearfix"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>

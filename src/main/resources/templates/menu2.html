@@ -1,0 +1,85 @@
+<div class="wrap-box"></div>
+<div class="header_bottom" xmlns:th="http://www.thymeleaf.org">
+	<div class="container">
+		<div class="col-xs-8 header-bottom-left">
+			<div class="col-xs-2 logo">
+				<h1>
+					<a href="/home"><span>Farm</span>matrix</a>
+				</h1>
+			</div>
+			<div class="col-xs-6 menu">
+				<ul class="megamenu skyblue">
+					
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'admin'" href="/viewusers?role=farmer" >View Farmer's</a>
+					</li>
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'admin'" href="/viewusers?role=dealer" >View Dealer's</a>
+					</li>
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'farmer'" href="/addchatmessage?receiver=admin@admin.com" >Send Message</a>
+						<a th:case="'dealer'" href="/addchatmessage?receiver=admin@admin.com" >Send Message</a>
+						<a th:case="'customer'" href="/addchatmessage?receiver=admin@admin.com" >Send Message</a>
+					</li>
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'admin'" href="/viewinbox" >In Box</a>
+						<a th:case="'farmer'" href="/viewinbox" >In Box</a>
+						<a th:case="'dealer'" href="/viewinbox" >In Box</a>
+						<a th:case="'customer'" href="/viewinbox" >In Box</a>
+					</li>
+					
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'farmer'" href="/edituser" >Update Profile</a>
+						<a th:case="'dealer'"  href="/edituser" >Update Profile</a>
+						<a th:case="'customer'" href="/edituser" >Update Profile</a>
+					</li>
+					
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'farmer'" href="/viewproducts" >View Products</a>
+						<a th:case="'dealer'" href="/viewproducts" >View Products</a>
+					</li>
+					
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'farmer'" href="/addproduct" >Add Product</a>
+						<a th:case="'dealer'" href="/addproduct" >Add Product</a>
+					</li>
+					
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'farmer'" href="/home" >Buy Products</a>
+						<a th:case="'dealer'"  href="/home" >Buy Products</a>
+						<a th:case="'customer'" href="/home" >Buy Products</a>
+					</li>
+					
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'farmer'" href="/viewvendororders">Customer Orders</a>
+						<a th:case="'dealer'"  href="/viewvendororders">Customer Orders</a>
+						<a th:case="'customer'" href="/viewvendororders">Customer Orders</a>
+					</li>
+					
+					<li class="active grid" th:switch="${session.role}">
+						<a th:case="'farmer'" href="/viewcustomerorders">Orders</a>
+						<a th:case="'dealer'" href="/viewcustomerorders">Orders</a>
+						<a th:case="'customer'" href="/viewcustomerorders">Orders</a>
+					</li>
+					
+					<li class="active grid" th:switch="${session.role}">
+						<button style="font-size:24px" th:case="'farmer'"><i class="fa fa-shopping-cart"><a href="/viewcart">View Cart</a></i></button>
+						<button style="font-size:24px" th:case="'dealer'"><i class="fa fa-shopping-cart"><a href="/viewcart">View Cart</a></i></button>
+						<button style="font-size:24px" th:case="'customer'"><i class="fa fa-shopping-cart"><a href="/viewcart">View Cart</a></i></button>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<div class="col-xs-4 header-bottom-right">
+			<div class="box_1-cart">
+				<div class="box_11">
+					<a href="/logout">Logout</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

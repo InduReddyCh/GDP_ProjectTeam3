@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu2"></th:block>
+	<div class="single_top">
+		<div class="container">
+			<div class="pages">
+				<div class="comments-area">
+					<h3>Add New Product</h3>
+					<form th:action="@{/saveproduct}" th:object="${product}" method="post" enctype="multipart/form-data">
+						<p>
+							<label>Name</label> <span>*</span> <input type="text" th:field="*{name}" required="required">
+						</p>
+						<p>
+							<label>Price(₹)</label> <span>*</span> <input type="text" th:field="*{price}" required="required">
+						</p>
+						<p>
+							<label>Description</label> <span>*</span>
+							<textarea th:field="*{description}" required="required"></textarea>
+						</p>
+						<p>
+							<label>Image</label> <span>*</span>
+							<input th:field="*{image}" type="file" required="required"/>
+						</p>
+						<p>
+							<label>Quantity</label> <span>*</span> <input type="text" th:field="*{quantity}" required="required">
+						</p>
+						<p>
+							<input type="submit" value="Add Product">
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>

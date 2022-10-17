@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu2"></th:block>
+	<div class="single_top">
+		<!-- --------------------------------------product start-------------------------------------- -->
+		<div class="grids_of_4">
+
+			<table id="customers">
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Mobile</th>
+					<th>Address</th>
+					<th>Status</th>
+					<th>Activate</th>
+					<th>Deactivate</th>
+				</tr>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.name}"></td>
+					<td th:text="${user.username}"></td>
+					<td th:text="${user.mobile}"></td>
+					<td th:text="${user.address}"></td>
+					<td th:text="${user.status}"></td>
+					<td><a th:href="@{'/updateuserstatus?userid='+${user.id}+'&status=yes'}" >Activate</a></td>
+					<td><a th:href="@{'/updateuserstatus?userid='+${user.id}+'&status=no'}" >Deactivate</a></td>
+				</tr>
+			</table>
+			
+		</div>
+		<!-- --------------------------------------product end-------------------------------------- -->
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>
