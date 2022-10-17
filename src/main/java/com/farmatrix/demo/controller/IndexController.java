@@ -41,6 +41,7 @@ public class IndexController {
 	public String menu2(Model model)
 	{
 		return "menu2";
+		
 	}
 }
 
