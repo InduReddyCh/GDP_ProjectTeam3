@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu2"></th:block>
+	<div class="single_top">
+		<div class="container">
+			<div class="pages">
+				<div class="comments-area">
+					<h3>Update Product</h3>
+					<form th:action="@{/updateproduct}" th:object="${product}">
+						<input type="hidden" th:field="*{id}" required="required">
+						<p>
+							<label>Price(₹)</label> <span>*</span> <input type="text" th:field="*{price}" required="required">
+						</p>
+						<p>
+							<label>Quantity</label> <span>*</span> <input type="text" th:field="*{quantity}" required="required">
+						</p>
+						<p>
+							<input type="submit" value="Update Product">
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>

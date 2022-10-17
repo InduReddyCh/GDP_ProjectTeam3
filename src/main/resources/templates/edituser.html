@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu2"></th:block>
+	<div class="single_top">
+		<div class="container">
+			<div class="pages">
+				<div class="comments-area">
+					<h3>Update User</h3>
+					<form th:action="@{/updateuser}" th:object="${user}">
+						<p>
+							<label>Mobile</label> <span>*</span> <input type="text" th:field="*{mobile}" required="required">
+						</p>
+						<p>
+							<label>Address</label> <span>*</span> <input type="text" th:field="*{address}" required="required">
+						</p>
+						<p>
+							<input type="submit" value="Update Profile">
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu2"></th:block>
+	<div class="single_top">
+		<div class="container">
+			<div class="pages">
+				<div class="comments-area">
+					<h3>Add New Product</h3>
+					<form th:action="@{/savechatmessage}" th:object="${chatmessage}" method="post">
+						<p>
+							<label>Sending To</label> <span>*</span> <input type="text" th:field="*{receiver}" required="required">
+						</p>
+						<p>
+							<label>Message</label> <span>*</span>
+							<textarea th:field="*{message}" required="required"></textarea>
+						</p>
+						<p>
+							<input type="submit" value="Send Message">
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>

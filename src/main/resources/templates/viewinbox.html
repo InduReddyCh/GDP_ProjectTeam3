@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="/header"></th:block>
+</head>
+<body>
+	<th:block th:include="/menu2"></th:block>
+	<div class="single_top">
+		<!-- --------------------------------------product start-------------------------------------- -->
+		<div class="grids_of_4">
+
+			<table id="customers">
+				<tr>
+					<th>Message</th>
+					<th>Date</th>
+					<th>Reply</th>
+					<th>Delete</th>
+				</tr>
+				<tr th:each="chatmessage : ${chatmessages}">
+					<td th:text="${chatmessage.message}"></td>
+					<td th:text="${chatmessage.datetime}"></td>
+					<td><a th:href="@{'/addchatmessage?receiver='+${chatmessage.sender}}" >Reply</a></td>
+					<td><a th:href="@{'/deletechatmessage?id='+${chatmessage.id}}" >delete</a></td>
+				</tr>
+			</table>
+			
+		</div>
+		<!-- --------------------------------------product end-------------------------------------- -->
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>
