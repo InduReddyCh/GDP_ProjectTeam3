@@ -35,7 +35,7 @@ width : 80px;
 						</figure>
 						<a href="registration.jsp" class="signup-image-link">Create an
 							account</a>
-					</div>
+   				  </div>
 
 					<div class="signin-form">
 						<h2 class="form-title">Sign up</h2>
